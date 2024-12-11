@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mermaid">
+        flowchart TD
+        A[Iniciar solicitud POST] --> B[Autenticar token]
+        B -->|Token válido| C[Obtener imágenes del request]
+        B -->|Token inválido| Z1[Respuesta: 401 Unauthorized]
+
+        C -->|Sin imágenes o imagen vacía| Z2[Respuesta: 400 No image file provided]
+        C -->|Más de una imagen| Z3[Respuesta: 400 Only one image file is allowed]
+        C -->|Una imagen válida| D[Validar tipo de archivo image]
+
+        D -->|Archivo no es imagen| Z4[Respuesta: 400 Invalid file type]
+        D -->|Archivo es imagen| E[Procesar imagen con OCR Tesseract.js]
+
+        E -->|Confianza baja OCR less than 60| Z5[Respuesta: 422 Low confidence]
+        E -->|Imagen inválida| Z6[Respuesta: 400 Invalid image]
+        E -->|Imagen procesada con éxito| F[Obtener datos de incapacidad con Azure OpenAI]
+
+        F --> G[Respuesta con datos de incapacidad JSON]
+        G --> H[Finalizar proceso con éxito]
+
+    </div>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</body>
+
+</html>

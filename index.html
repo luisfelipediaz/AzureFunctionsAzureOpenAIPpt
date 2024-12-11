@@ -7,6 +7,7 @@
     <title>Azure Functions with Azure OpenAI</title>
     <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css" />
     <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css" />
+    <link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css">
     <style>
         .intro-section h1 {
             font-size: 2.5em;
@@ -29,10 +30,9 @@
         <div class="slides">
             <!-- Slide 1: Introducción -->
             <section class="intro-section" data-background-color="#020b14">
-                <a href="https://revealjs.com">
-                    <img src="https://bitakora.co/wp-content/uploads/2024/07/Logo-Bitakora-W.png" alt="reveal.js logo"
-                        style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-                </a>
+                <img src="https://bitakora.co/wp-content/uploads/2024/07/Logo-Bitakora-W.png" alt="reveal.js logo"
+                    style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+
                 <h3>Desarrollando con Azure Functions y Azure OpenAI</h3>
                 <p><small>Teoría y práctica para la creación de aplicaciones modernas</small></p>
                 <p><small><strong>Nombre:</strong> Luis Felipe Díaz Valbuena</small></p>
@@ -41,28 +41,61 @@
             <!-- Slide 2: Agenda -->
             <section data-background-color="#020b14">
                 <h3>Agenda</h3>
-                <ul>
-                    <li>Introducción a Azure Functions</li>
-                    <li>Azure OpenAI: ¿Qué es y cómo funciona?</li>
-                    <li>Casos de uso y beneficios</li>
-                    <li>Demostración práctica</li>
-                    <li>Sesión de preguntas y respuestas</li>
-                </ul>
+                <small>
+                    <ul>
+                        <li>Azure Functions: Introducción</li>
+                        <li>Azure OpenAI: ¿Qué es?</li>
+                        <li>Azure OpenAI: Beneficios</li>
+                        <li>Azure OpenAI: ¿Cómo funciona?</li>
+                        <li>El problema / Diagrama Arquitectónico</li>
+                        <li>Demostración práctica</li>
+                        <li>Mejores prácticas</li>
+                        <li>Resultados y futuro</li>
+                        <li>Conclusiones</li>
+                        <li>Preguntas sin respuestas</li>
+                    </ul>
+                </small>
             </section>
 
             <!-- Slide 3: Azure Functions -->
             <section data-background-color="#020b14">
                 <h3>Azure Functions: Introducción</h3>
-                <p>Ejecución de código bajo demanda en la nube</p>
-                <ul>
-                    <li>Escalabilidad</li>
-                    <li>Pago por uso</li>
-                    <li>Simplificación de la infraestructura</li>
-                </ul>
-                <p><strong>Ejemplos:</strong> Procesamiento de datos, webhooks, APIs</p>
+                <small>
+                    <p>Ejecución de código bajo demanda en la nube, sin necesidad de administrar infraestructura.</p>
+                    <ul>
+                        <li>Escalabilidad automática</li>
+                        <li>Pago solo por el tiempo de ejecución</li>
+                        <li>Simplificación de la infraestructura, sin servidores que gestionar</li>
+                    </ul>
+                </small>
             </section>
 
-            <!-- Slide 4: Azure OpenAI: ¿Qué es? -->
+            <!-- Slide 4: Tipos de Funciones -->
+            <section data-background-color="#020b14">
+                <h3>Azure Functions: Tipos de funciones</h3>
+                <small>
+                    <p><strong>Tipos de funciones que se pueden ejecutar:</strong></p>
+                    <ul>
+                        <li><strong>HTTP Trigger:</strong> Funciones que responden a solicitudes HTTP, ideales para
+                            crear
+                            APIs o endpoints.</li>
+                        <li><strong>Event Grid Trigger:</strong> Funciones que se activan por eventos de Azure Event
+                            Grid, como la carga de archivos a Blob Storage.</li>
+                        <li><strong>Queue Trigger:</strong> Funciones que se activan por mensajes en colas de Azure
+                            Storage, útil para procesar tareas en segundo plano.</li>
+                        <li><strong>Timer Trigger:</strong> Funciones que se ejecutan en intervalos específicos, como un
+                            cron job.</li>
+                        <li><strong>Cosmos DB Trigger:</strong> Funciones que reaccionan a cambios en una base de datos
+                            Cosmos DB.</li>
+                        <li><strong>Webhook Trigger:</strong> Funciones que responden a eventos externos a través de un
+                            webhook.</li>
+                    </ul>
+                    <p><strong>Ejemplos:</strong> Procesamiento de datos, integración con APIs, webhooks, tareas
+                        programadas.</p>
+                </small>
+            </section>
+
+            <!-- Slide 5: Azure OpenAI: ¿Qué es? -->
             <section data-background-color="#020b14">
                 <h3>Azure OpenAI: ¿Qué es?</h3>
                 <ul>
@@ -77,21 +110,17 @@
                 </ul>
             </section>
 
-            <!-- Slide 5: Azure OpenAI: ¿Qué es? -->
+            <!-- Slide 6: Azure OpenAI: Beneficios -->
             <section data-background-color="#020b14">
-                <h3>Azure OpenAI: ¿Qué es?</h3>
+                <h3>Azure OpenAI: Beneficios</h3>
                 <ul>
-                    <li>Beneficios de Azure OpenAI:
-                        <ul>
-                            <li>Seguridad y cumplimiento empresarial.</li>
-                            <li>Escalabilidad y fiabilidad en la infraestructura de Azure.</li>
-                            <li>Integración sencilla con otros servicios de Azure.</li>
-                        </ul>
-                    </li>
+                    <li>Seguridad y cumplimiento empresarial.</li>
+                    <li>Escalabilidad y fiabilidad en la infraestructura de Azure.</li>
+                    <li>Integración sencilla con otros servicios de Azure.</li>
                 </ul>
             </section>
 
-            <!-- Slide 6: Azure OpenAI: ¿Cómo funciona? -->
+            <!-- Slide 7: Azure OpenAI: ¿Cómo funciona? -->
             <section data-background-color="#020b14">
                 <h3>Azure OpenAI: ¿Cómo funciona?</h3>
                 <p>Pasos básicos para implementar Azure OpenAI:</p>
@@ -102,37 +131,29 @@
                 </ol>
             </section>
 
-            <!-- Slide 6: Azure OpenAI: ¿Cómo funciona? -->
+            <!-- Slide 9: El Problema / Diagrama Arquitectónico -->
             <section data-background-color="#020b14">
-                <h3>Azure OpenAI: ¿Cómo funciona?</h3>
-                <p><strong>Ejemplo de uso:</strong></p>
-                <ul>
-                    <li>Envío de un texto para análisis y generación de respuestas dinámicas.</li>
-                    <li>Procesamiento de documentos a través de Azure Functions y OpenAI.</li>
-                </ul>
+                <h3>El problema</h3>
+                <p><small>En miBitákora, los empleados pueden enviar una foto de su incapacidad para que se procese
+                        automáticamente. Usamos Azure Functions junto con Tesseract.js para extraer el texto de la
+                        imagen y Azure OpenAI para obtener los datos relevantes de la incapacidad.</small></p>
+                <p><small>El flujo de procesamiento incluye varias validaciones, como la autenticación del token, la
+                        validación de la imagen y la extracción de los datos. El siguiente diagrama describe este
+                        proceso.</small></p>
             </section>
 
-            <!-- Slide 7: Diagrama Arquitectónico -->
+            <!-- Slide 10: Diagrama de Flujo -->
             <section data-background-color="#020b14">
-                <h3>Diagrama Arquitectónico</h3>
-                <p>Ilustra cómo interactúan Azure Functions y Azure OpenAI.</p>
-                <img src="architecture-diagram.png" alt="Diagrama Arquitectónico" style="width: 80%;">
+                <h3>Diagrama de Flujo</h3>
+                <img src="./mermaid-diagram-2024-12-11-142038.svg" alt="Diagrama Arquitectónico"
+                    style="height: 400px; margin: 0 auto 4rem auto; background: transparent;">
             </section>
 
-            <!-- Slide 8: Casos de Uso -->
-            <section data-background-color="#020b14">
-                <h3>Casos de Uso</h3>
-                <ul>
-                    <li>Chatbots inteligentes</li>
-                    <li>Generación automática de contenido</li>
-                    <li>Análisis de documentos a gran escala</li>
-                </ul>
-            </section>
-
-            <!-- Slide 9: Demostración Práctica -->
-            <section data-background-color="#020b14">
-                <h3>Demostración Práctica</h3>
-                <p><strong>Objetivo:</strong> Crear una función que reciba un texto y devuelva una respuesta generada
+            <!-- Slide 11: Demostración Práctica -->
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">Demostración Práctica</h3>
+                <p data-id="demostracion-contenido"><strong>Objetivo:</strong> Crear una función que reciba una imagen y
+                    devuelva una incapacidad
                     por Azure OpenAI.</p>
                 <ol>
                     <li>Configurar el entorno</li>
@@ -142,24 +163,113 @@
                 </ol>
             </section>
 
-            <!-- Slide 10: Mejores Prácticas -->
-            <section data-background-color="#020b14">
-                <h3>Mejores Prácticas</h3>
-                <ul>
-                    <li>Gestión de secretos con Azure Key Vault</li>
-                    <li>Control de costos</li>
-                    <li>Monitoreo con Application Insights</li>
-                </ul>
+            <!-- Slide 11: Demostración Práctica -->
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">Configurar el entorno</h3>
+                <div data-id="demostracion-contenido">
+                    <span class="fragment"><strong>Paso 1:</strong> Crear una cuenta de Azure y un recurso de Azure
+                        Functions.
+                    </span>
+                    <br />
+                    <span class="fragment"><strong>Paso 2:</strong> Instalar las herramientas de Azure
+                        Functions en tu máquina local.
+                    </span>
+                    <br />
+                    <span class="fragment"><strong>Paso 3:</strong> Crea un proyecto de Azure Functions en Visual
+                        Studio
+                        Code con este comando:
+                        <pre>
+                        <code class="hljs zsh" data-trim data-line-numbers>
+                            <script type="text/template">
+                            func init --worker-runtime node --language typescript
+                            func new --template "Http Trigger" --name {{NOMBRE_FUNCION}}
+                        </script>
+                        </code>
+                    </pre>
+                    </span>
+                </div>
             </section>
 
-            <!-- Slide 11: Resultados y Futuro -->
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">Debería verse algo así:</h3>
+                <div data-id="demostracion-contenido">
+                    <img src="./scaffolding.png" alt="Estructura de carpetas de Azure Functions"
+                        style="height: 400px; margin: 0 auto 4rem auto; background: transparent;">
+                </div>
+            </section>
+
+            <!-- Slide 12: Mejores Prácticas -->
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">Pillemos el código:</h3>
+                <pre data-id="demostracion-codigo">
+                    <code class="hljs typescript" data-trim data-line-numbers="7-11">
+                        <script type="text/template">
+                        import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
+
+                        export async function IncapacidadesIA(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
+                            ....
+                        };
+
+                        app.http('IncapacidadesIA', {
+                            methods: ['GET', 'POST'],
+                            authLevel: 'anonymous',
+                            handler: IncapacidadesIA
+                        });
+                        </script>
+                    </code>
+                </pre>
+            </section>
+
+
+            <!-- Slide 12: Mejores Prácticas -->
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">Pillemos el código:</h3>
+                <pre data-id="demostracion-codigo">
+                    <code class="hljs typescript" data-trim data-line-numbers="4-8">
+                        <script type="text/template">
+                        import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
+
+                        export async function IncapacidadesIA(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
+                            context.log(`Http function processed request for url "${request.url}"`);
+
+                            const name = request.query.get('name') || await request.text() || 'world';
+
+                            return { body: `Hello, ${name}!` };
+                        };
+
+                        app.http('IncapacidadesIA', {
+                            methods: ['GET', 'POST'],
+                            authLevel: 'anonymous',
+                            handler: IncapacidadesIA
+                        });
+                    </script>
+                    </code>
+                </pre>
+            </section>
+
+            <!-- Slide 12: Mejores Prácticas -->
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">Nos toca instalar algunos paquetes:</h3>
+                <pre data-id="demostracion-codigo">
+                    <code class="hljs bash" data-trim data-line-numbers>
+                        <script type="text/template">
+                        npm install tesseract.js // OCR
+                        npm install openai // Azure OpenAI
+                        npm install formidable // Procesamiento de archivos
+                        npm install jose // Autenticación JWT
+                    </script>
+                    </code>
+                </pre>
+            </section>
+
+            <!-- Slide 13: Resultados y Futuro -->
             <section data-background-color="#020b14">
                 <h3>Resultados y Futuro</h3>
                 <p>Cómo las empresas pueden aprovechar esta integración</p>
                 <p>Potenciales mejoras futuras en Azure OpenAI</p>
             </section>
 
-            <!-- Slide 12: Conclusiones -->
+            <!-- Slide 14: Conclusiones -->
             <section data-background-color="#020b14">
                 <h3>Conclusiones</h3>
                 <ul>
@@ -169,25 +279,20 @@
                 </ul>
             </section>
 
-            <!-- Slide 13: Preguntas y Respuestas -->
+            <!-- Slide 15: Preguntas y Respuestas -->
             <section data-background-color="#020b14">
                 <h3>Preguntas y Respuestas</h3>
                 <p>Espacio para resolver dudas del público.</p>
             </section>
 
-            <!-- Slide 14: Cierre -->
+            <!-- Slide 16: Cierre -->
             <section data-background-color="#020b14">
                 <h3>¡Gracias!</h3>
-                <p>Datos de contacto:</p>
-                <ul>
-                    <li>Correo: tu.correo@bitakora.com</li>
-                    <li>LinkedIn: [Tu Perfil]</li>
-                </ul>
-                <p>Recursos adicionales: Documentación de Azure, ejemplos prácticos</p>
             </section>
         </div>
     </div>
     <script type="module" src="./index.js"></script>
+
 </body>
 
 </html>

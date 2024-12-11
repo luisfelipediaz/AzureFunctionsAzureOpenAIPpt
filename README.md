@@ -2,9 +2,14 @@
 
 This project demonstrates how to create a presentation using reveal.js and Azure Functions.
 
+## Project Run
+    npm install
+    npm start
+
 ## Project Setup
 
 1. **Create the project folder:**
+
     ```sh
     mkdir AzureFunctionsAzureOpenAIPpt
     cd AzureFunctionsAzureOpenAIPpt
