@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Functions with Azure OpenAI</title>
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css" />
+    <style>
+        .intro-section h1 {
+            font-size: 2.5em;
+        }
+
+        .intro-section p {
+            font-size: 1.2em;
+        }
+
+        .intro-section .company-name {
+            font-size: 1em;
+            font-style: italic;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Introducción -->
+            <section class="intro-section" data-background-color="#020b14">
+                <a href="https://revealjs.com">
+                    <img src="https://bitakora.co/wp-content/uploads/2024/07/Logo-Bitakora-W.png" alt="reveal.js logo"
+                        style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+                </a>
+                <h3>Desarrollando con Azure Functions y Azure OpenAI</h3>
+                <p><small>Teoría y práctica para la creación de aplicaciones modernas</small></p>
+                <p><small><strong>Nombre:</strong> Luis Felipe Díaz Valbuena</small></p>
+            </section>
+
+            <!-- Slide 2: Agenda -->
+            <section data-background-color="#020b14">
+                <h3>Agenda</h3>
+                <ul>
+                    <li>Introducción a Azure Functions</li>
+                    <li>Azure OpenAI: ¿Qué es y cómo funciona?</li>
+                    <li>Casos de uso y beneficios</li>
+                    <li>Demostración práctica</li>
+                    <li>Sesión de preguntas y respuestas</li>
+                </ul>
+            </section>
+
+            <!-- Slide 3: Azure Functions -->
+            <section data-background-color="#020b14">
+                <h3>Azure Functions: Introducción</h3>
+                <p>Ejecución de código bajo demanda en la nube</p>
+                <ul>
+                    <li>Escalabilidad</li>
+                    <li>Pago por uso</li>
+                    <li>Simplificación de la infraestructura</li>
+                </ul>
+                <p><strong>Ejemplos:</strong> Procesamiento de datos, webhooks, APIs</p>
+            </section>
+
+            <!-- Slide 4: Azure OpenAI: ¿Qué es? -->
+            <section data-background-color="#020b14">
+                <h3>Azure OpenAI: ¿Qué es?</h3>
+                <ul>
+                    <li>Servicio que integra los modelos avanzados de OpenAI en la nube de Azure.</li>
+                    <li>Modelos soportados:
+                        <ul>
+                            <li><strong>GPT</strong>: Generación de texto y chatbots.</li>
+                            <li><strong>Codex</strong>: Comprensión de código.</li>
+                            <li><strong>DALL-E</strong>: Generación de imágenes.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Slide 5: Azure OpenAI: ¿Qué es? -->
+            <section data-background-color="#020b14">
+                <h3>Azure OpenAI: ¿Qué es?</h3>
+                <ul>
+                    <li>Beneficios de Azure OpenAI:
+                        <ul>
+                            <li>Seguridad y cumplimiento empresarial.</li>
+                            <li>Escalabilidad y fiabilidad en la infraestructura de Azure.</li>
+                            <li>Integración sencilla con otros servicios de Azure.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Slide 6: Azure OpenAI: ¿Cómo funciona? -->
+            <section data-background-color="#020b14">
+                <h3>Azure OpenAI: ¿Cómo funciona?</h3>
+                <p>Pasos básicos para implementar Azure OpenAI:</p>
+                <ol>
+                    <li>Configurar un recurso de Azure OpenAI en el portal de Azure.</li>
+                    <li>Seleccionar el modelo adecuado para tu caso de uso (GPT, Codex, DALL-E).</li>
+                    <li>Conectar tu aplicación mediante las API REST o SDK.</li>
+                </ol>
+            </section>
+
+            <!-- Slide 6: Azure OpenAI: ¿Cómo funciona? -->
+            <section data-background-color="#020b14">
+                <h3>Azure OpenAI: ¿Cómo funciona?</h3>
+                <p><strong>Ejemplo de uso:</strong></p>
+                <ul>
+                    <li>Envío de un texto para análisis y generación de respuestas dinámicas.</li>
+                    <li>Procesamiento de documentos a través de Azure Functions y OpenAI.</li>
+                </ul>
+            </section>
+
+            <!-- Slide 7: Diagrama Arquitectónico -->
+            <section data-background-color="#020b14">
+                <h3>Diagrama Arquitectónico</h3>
+                <p>Ilustra cómo interactúan Azure Functions y Azure OpenAI.</p>
+                <img src="architecture-diagram.png" alt="Diagrama Arquitectónico" style="width: 80%;">
+            </section>
+
+            <!-- Slide 8: Casos de Uso -->
+            <section data-background-color="#020b14">
+                <h3>Casos de Uso</h3>
+                <ul>
+                    <li>Chatbots inteligentes</li>
+                    <li>Generación automática de contenido</li>
+                    <li>Análisis de documentos a gran escala</li>
+                </ul>
+            </section>
+
+            <!-- Slide 9: Demostración Práctica -->
+            <section data-background-color="#020b14">
+                <h3>Demostración Práctica</h3>
+                <p><strong>Objetivo:</strong> Crear una función que reciba un texto y devuelva una respuesta generada
+                    por Azure OpenAI.</p>
+                <ol>
+                    <li>Configurar el entorno</li>
+                    <li>Escribir código en Azure Functions</li>
+                    <li>Integrar con Azure OpenAI</li>
+                    <li>Probar y ejecutar</li>
+                </ol>
+            </section>
+
+            <!-- Slide 10: Mejores Prácticas -->
+            <section data-background-color="#020b14">
+                <h3>Mejores Prácticas</h3>
+                <ul>
+                    <li>Gestión de secretos con Azure Key Vault</li>
+                    <li>Control de costos</li>
+                    <li>Monitoreo con Application Insights</li>
+                </ul>
+            </section>
+
+            <!-- Slide 11: Resultados y Futuro -->
+            <section data-background-color="#020b14">
+                <h3>Resultados y Futuro</h3>
+                <p>Cómo las empresas pueden aprovechar esta integración</p>
+                <p>Potenciales mejoras futuras en Azure OpenAI</p>
+            </section>
+
+            <!-- Slide 12: Conclusiones -->
+            <section data-background-color="#020b14">
+                <h3>Conclusiones</h3>
+                <ul>
+                    <li>Resumen de la sesión</li>
+                    <li>Inspírate para explorar más integraciones</li>
+                    <li>Comienza a construir con Azure</li>
+                </ul>
+            </section>
+
+            <!-- Slide 13: Preguntas y Respuestas -->
+            <section data-background-color="#020b14">
+                <h3>Preguntas y Respuestas</h3>
+                <p>Espacio para resolver dudas del público.</p>
+            </section>
+
+            <!-- Slide 14: Cierre -->
+            <section data-background-color="#020b14">
+                <h3>¡Gracias!</h3>
+                <p>Datos de contacto:</p>
+                <ul>
+                    <li>Correo: tu.correo@bitakora.com</li>
+                    <li>LinkedIn: [Tu Perfil]</li>
+                </ul>
+                <p>Recursos adicionales: Documentación de Azure, ejemplos prácticos</p>
+            </section>
+        </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
