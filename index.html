@@ -41,20 +41,17 @@
             <!-- Slide 2: Agenda -->
             <section data-background-color="#020b14">
                 <h3>Agenda</h3>
-                <small>
-                    <ul>
-                        <li>Azure Functions: Introducción</li>
-                        <li>Azure OpenAI: ¿Qué es?</li>
-                        <li>Azure OpenAI: Beneficios</li>
-                        <li>Azure OpenAI: ¿Cómo funciona?</li>
-                        <li>El problema / Diagrama Arquitectónico</li>
-                        <li>Demostración práctica</li>
-                        <li>Mejores prácticas</li>
-                        <li>Resultados y futuro</li>
-                        <li>Conclusiones</li>
-                        <li>Preguntas sin respuestas</li>
-                    </ul>
-                </small>
+                <ul>
+                    <li>Azure Functions: Introducción</li>
+                    <li>Azure OpenAI: ¿Qué es?</li>
+                    <li>Azure OpenAI: Beneficios</li>
+                    <li>El problema / Diagrama Arquitectónico</li>
+                    <li>Demostración práctica</li>
+                    <li>Mejores prácticas</li>
+                    <li>Resultados y futuro</li>
+                    <li>Conclusiones</li>
+                    <li>Preguntas sin respuestas</li>
+                </ul>
             </section>
 
             <!-- Slide 3: Azure Functions -->
@@ -120,18 +117,7 @@
                 </ul>
             </section>
 
-            <!-- Slide 7: Azure OpenAI: ¿Cómo funciona? -->
-            <section data-background-color="#020b14">
-                <h3>Azure OpenAI: ¿Cómo funciona?</h3>
-                <p>Pasos básicos para implementar Azure OpenAI:</p>
-                <ol>
-                    <li>Configurar un recurso de Azure OpenAI en el portal de Azure.</li>
-                    <li>Seleccionar el modelo adecuado para tu caso de uso (GPT, Codex, DALL-E).</li>
-                    <li>Conectar tu aplicación mediante las API REST o SDK.</li>
-                </ol>
-            </section>
-
-            <!-- Slide 9: El Problema / Diagrama Arquitectónico -->
+            <!-- Slide 7: El problema -->
             <section data-background-color="#020b14">
                 <h3>El problema</h3>
                 <p><small>En miBitákora, los empleados pueden enviar una foto de su incapacidad para que se procese
@@ -142,14 +128,14 @@
                         proceso.</small></p>
             </section>
 
-            <!-- Slide 10: Diagrama de Flujo -->
+            <!-- Slide 8: Diagrama de Flujo -->
             <section data-background-color="#020b14">
                 <h3>Diagrama de Flujo</h3>
                 <img src="./mermaid-diagram-2024-12-11-142038.svg" alt="Diagrama Arquitectónico"
                     style="height: 400px; margin: 0 auto 4rem auto; background: transparent;">
             </section>
 
-            <!-- Slide 11: Demostración Práctica -->
+            <!-- Slide 9: Demostración Práctica -->
             <section data-background-color="#020b14" data-auto-animate>
                 <h3 data-id="demostracion-title">Demostración Práctica</h3>
                 <p data-id="demostracion-contenido"><strong>Objetivo:</strong> Crear una función que reciba una imagen y
@@ -163,7 +149,7 @@
                 </ol>
             </section>
 
-            <!-- Slide 11: Demostración Práctica -->
+            <!-- Slide 10: Configurar el entorno -->
             <section data-background-color="#020b14" data-auto-animate>
                 <h3 data-id="demostracion-title">Configurar el entorno</h3>
                 <div data-id="demostracion-contenido">
@@ -175,7 +161,11 @@
                         Functions en tu máquina local.
                     </span>
                     <br />
-                    <span class="fragment"><strong>Paso 3:</strong> Crea un proyecto de Azure Functions en Visual
+                    <span class="fragment"><strong>Paso 3:</strong> Desplegar el modelo de gpt-4o-mini desde Azure AI
+                        Foundry.
+                    </span>
+                    <br />
+                    <span class="fragment"><strong>Paso 4:</strong> Crear un proyecto de Azure Functions en Visual
                         Studio
                         Code con este comando:
                         <pre>
@@ -190,6 +180,7 @@
                 </div>
             </section>
 
+            <!-- Slide 11: Debería verse algo así -->
             <section data-background-color="#020b14" data-auto-animate>
                 <h3 data-id="demostracion-title">Debería verse algo así:</h3>
                 <div data-id="demostracion-contenido">
@@ -198,7 +189,7 @@
                 </div>
             </section>
 
-            <!-- Slide 12: Mejores Prácticas -->
+            <!-- Slide 12: Pillemos el código -->
             <section data-background-color="#020b14" data-auto-animate>
                 <h3 data-id="demostracion-title">Pillemos el código:</h3>
                 <pre data-id="demostracion-codigo">
@@ -221,7 +212,7 @@
             </section>
 
 
-            <!-- Slide 12: Mejores Prácticas -->
+            <!-- Slide 13: Pillemos el código -->
             <section data-background-color="#020b14" data-auto-animate>
                 <h3 data-id="demostracion-title">Pillemos el código:</h3>
                 <pre data-id="demostracion-codigo">
@@ -247,7 +238,7 @@
                 </pre>
             </section>
 
-            <!-- Slide 12: Mejores Prácticas -->
+            <!-- Slide 14: Nos toca instalar algunos paquetes -->
             <section data-background-color="#020b14" data-auto-animate>
                 <h3 data-id="demostracion-title">Nos toca instalar algunos paquetes:</h3>
                 <pre data-id="demostracion-codigo">
@@ -262,14 +253,209 @@
                 </pre>
             </section>
 
-            <!-- Slide 13: Resultados y Futuro -->
+
+            <!-- Slide 15: GIF -->
+            <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+                <h2>... y ya?</h2>
+                <div class="fragment">
+                    <p>Ps no, hay que obtener las claves de GPT, configurar los limites de tokens y
+                        programar</p>
+                    <img src="https://www.topito.com/wp-content/uploads/2013/01/code-21.gif" alt="GIF" />
+                </div>
+                <p class="fragment">Supongamos que ya lo hicimos ----></p>
+            </section>
+
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">Pillemos el código:</h3>
+                <pre data-id="demostracion-codigo">
+                    <code class="hljs typescript" data-trim data-line-numbers="|7-12|16-18|20-29|31-36|38">
+                        <script type="text/template">
+                            import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
+                            import { obtenerIncapacidadDesdeImagen } from "../AI";
+                            import { autenticarToken } from "../Auth";
+                            import { obtenerTextoDeLaImagen } from "../OCR";
+                            import { obtenerImagenesDelRequest } from "../Request";
+                            
+                            const INVALID_FILE_TYPE = "Invalid file type";
+                            const INVALID_IMAGE = "Invalid image";
+                            const ONLY_ONE_IMAGE = "Only one image file is allowed";
+                            const NO_IMAGE_FILE = "No image file provided";
+                            const UNAUTHORIZED = "Unauthorized";
+                            const LOW_CONFIDENCE = "Low confidence";
+                            
+                            export async function IncapacidadesIA(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
+                                try {
+                                    const isAuthenticated = await autenticarToken(request.headers.get('Authorization'));
+                                    if (!isAuthenticated)
+                                        return { status: 401, body: UNAUTHORIZED };
+                            
+                                    const { image } = await obtenerImagenesDelRequest(request);
+                                    if (!image || image.length === 0)
+                                        return { status: 400, body: NO_IMAGE_FILE };
+                                    if (image.length > 1)
+                                        return { status: 400, body: ONLY_ONE_IMAGE };
+                            
+                                    const [incapacidadFile] = image;
+                            
+                                    if (!incapacidadFile.mimetype.startsWith('image/'))
+                                        return { status: 400, body: INVALID_FILE_TYPE };
+                            
+                                    const OCRResult = await obtenerTextoDeLaImagen(incapacidadFile.filepath);
+                            
+                                    if (OCRResult.confidence < 60)
+                                        return { status: 422, body: `${LOW_CONFIDENCE}: ${OCRResult.confidence}` };
+                                    if (!OCRResult.valid)
+                                        return { status: 400, body: INVALID_IMAGE };
+                            
+                                    const gptResult = await obtenerIncapacidadDesdeImagen(incapacidadFile);
+                            
+                                    return { body: JSON.stringify(gptResult), headers: { 'Content-Type': 'application/json' } };
+                                } catch (error) {
+                                    context.error('Error:', error);
+                                    return { status: 500, body: error.message };
+                                }
+                            }
+                            
+                            app.http('IncapacidadesIA', {
+                                methods: ['POST'],
+                                authLevel: 'anonymous',
+                                handler: IncapacidadesIA
+                            });
+                    </script>
+                    </code>
+                </pre>
+            </section>
+
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">La IA:</h3>
+                <pre data-id="demostracion-codigo-2">
+                    <code class="hljs typescript" data-trim data-line-numbers="|5-10|13-14|16-33|35|38-47|">
+                        <script type="text/template">
+                            import { File } from 'formidable';
+                            import { promises as fs } from 'fs';
+                            import { AzureOpenAI } from "openai";
+
+                            const openai = new AzureOpenAI({
+                                deployment: 'gpt-4o-mini',
+                                apiVersion: '2024-10-21',
+                                endpoint: process.env['AZUREOPENAI_ENDPOINT'],
+                                apiKey: process.env['AZUREOPENAI_APIKEY']
+                            });
+
+                            export async function obtenerIncapacidadDesdeImagen(image: File) {
+                                const fileBuffer = await fs.readFile(image.filepath);
+                                const imageBase64 = fileBuffer.toString('base64');
+                                try {
+                                    const completion = await openai.chat.completions.create({
+                                        model: 'gpt-4o-mini',
+                                        messages: [
+                                            { role: 'system', content: `Sorry but I can't show you the fucking prompt because this repo is public.`, },
+                                            { 
+                                                role: 'user',
+                                                content: [
+                                                    {
+                                                        type: 'image_url',
+                                                        image_url: {
+                                                            url: `data:${image.mimetype};base64,${imageBase64}`
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                        ],
+                                        max_tokens: 300
+                                    });
+
+                                    const gptContent = completion.choices[0].message.content.trim();
+
+                                    // Try to safely parse the JSON content
+                                    const jsonStart = gptContent.indexOf('{');
+                                    const jsonEnd = gptContent.lastIndexOf('}');
+
+                                    if (jsonStart !== -1 && jsonEnd !== -1) {
+                                        const jsonString = gptContent.substring(jsonStart, jsonEnd + 1);
+                                        const parsedJson = JSON.parse(jsonString);
+                                        return parsedJson;
+                                    } else {
+                                        throw new Error('JSON not found in GPT response');
+                                    }
+                                } catch (error) {
+                                    console.error('Error calling GPT API:', error);
+                                    throw error;
+                                }
+                            }
+                    </script>
+                    </code>
+                </pre>
+            </section>
+
+            <section data-background-color="#020b14" data-auto-animate>
+                <h3 data-id="demostracion-title">Se puede mejorar:</h3>
+                <pre data-id="demostracion-codigo-2">
+                    <code class="hljs typescript" data-trim data-line-numbers="|19-36|44">
+                        <script type="text/template">
+                            import { File } from 'formidable';
+                            import { promises as fs } from 'fs';
+                            import { AzureOpenAI } from "openai";
+
+                            const openai = new AzureOpenAI({
+                                ...
+                            });
+
+                            // Antes - Despues = Diferencia
+                            // Total tokens: 37065 - 37119 = 54
+                            // Token de respuesta($): 88 - 62 = 26
+
+                            export async function obtenerIncapacidadDesdeImagen(image: File) {
+                                const fileBuffer = await fs.readFile(image.filepath);
+                                const imageBase64 = fileBuffer.toString('base64');
+                                try {
+                                    const completion = await openai.chat.completions.create({
+                                        model: 'gpt-4o-mini',
+                                        response_format: {
+                                            type: 'json_schema',
+                                            json_schema: {
+                                                name: 'incapacidades_schema',
+                                                schema: {
+                                                    type: 'object',
+                                                    properties: {
+                                                        consecutivo: { type: 'number' },
+                                                        fecha: { type: 'string', format: 'date-time' },
+                                                        diagnostico: { type: 'string' },
+                                                        cantidadDias: { type: 'number' },
+                                                        fechaInicio: { type: 'string', format: 'date' },
+                                                        causa: { type: 'string' },
+                                                        identificacion: { type: 'string' },
+                                                    }
+                                                },
+                                            }
+                                        },
+                                        messages: [
+                                           ....
+                                        ]
+                                    });
+
+                                    const gptContent = completion.choices[0].message.content.trim();
+
+                                    return JSON.parse(gptContent);
+                                } catch (error) {
+                                    console.error('Error calling GPT API:', error);
+                                    throw error;
+                                }
+                            }
+                    </script>
+                    </code>
+                </pre>
+            </section>
+
+
+            <!-- Slide 16: Resultados y Futuro -->
             <section data-background-color="#020b14">
                 <h3>Resultados y Futuro</h3>
                 <p>Cómo las empresas pueden aprovechar esta integración</p>
                 <p>Potenciales mejoras futuras en Azure OpenAI</p>
             </section>
 
-            <!-- Slide 14: Conclusiones -->
+            <!-- Slide 17: Conclusiones -->
             <section data-background-color="#020b14">
                 <h3>Conclusiones</h3>
                 <ul>
@@ -279,13 +465,13 @@
                 </ul>
             </section>
 
-            <!-- Slide 15: Preguntas y Respuestas -->
+            <!-- Slide 18: Conclusiones -->
             <section data-background-color="#020b14">
-                <h3>Preguntas y Respuestas</h3>
-                <p>Espacio para resolver dudas del público.</p>
+                <h3>Preguntas sin Respuestas</h3>
+                <p>Espacio para ampliar dudas del público.</p>
             </section>
 
-            <!-- Slide 16: Cierre -->
+            <!-- Slide 19: Gracias -->
             <section data-background-color="#020b14">
                 <h3>¡Gracias!</h3>
             </section>
